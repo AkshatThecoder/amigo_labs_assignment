@@ -6,16 +6,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot that allo
 
 ## 🧱 Project Architecture & Flow
 
-```mermaid
-graph TD
-    A[PDF Upload] --> B[Chunker (text splitter)]
-    B --> C[Embeddings (MiniLM)]
-    C --> D[Chroma Vector Store]
-    E[User Query] --> F[Retriever + Prompt Builder]
-    D --> F
-    F --> G[Groq LLaMA 3 (via API)]
-    G --> H[Streamlit Chat UI (with Streaming)]
-```
+![RAG Chatbot Architecture](screenshots/architecture.png)
 
 - PDF is chunked using `RecursiveCharacterTextSplitter`
 - Embeddings are generated using `sentence-transformers/all-MiniLM-L6-v2` 
